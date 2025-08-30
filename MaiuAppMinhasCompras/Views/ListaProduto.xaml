@@ -2,11 +2,30 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MaiuAppMinhasCompras.Views.ListaProduto"
-             Title="ListaProduto">
-    <VerticalStackLayout>
+           Title="Minhas Compras 🛒">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="🧾 Somar"/>
+        <ToolbarItem Text="➕ Adicionar" Clicked="ToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
+
+    <VerticalStackLayout Padding="20" Spacing="20">
+
+
         <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            Text="Bem-vindo ao seu controle de compras 🛍️"
+            FontSize="24"
+            FontAttributes="Bold"
+            HorizontalOptions="Center"
+            TextColor="#4CAF50"/>
+
+
+        <Label 
+            Text="Aqui você pode adicionar produtos, gerenciar sua lista e calcular o total." 
+            FontSize="16"
+            HorizontalOptions="Center"
+            HorizontalTextAlignment="Center"
+            TextColor="Gray"/>
+
     </VerticalStackLayout>
 </ContentPage>

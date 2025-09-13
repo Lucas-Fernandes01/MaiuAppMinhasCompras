@@ -27,6 +27,7 @@ namespace MaiuAppMinhasCompras
         public App()
         {
             InitializeComponent();
+            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("pt-BR");
 
             //MainPage = new AppShell();
             MainPage = new NavigationPage(new Views.ListaProduto());

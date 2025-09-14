@@ -139,6 +139,25 @@ public partial class ListaProduto : ContentPage
             lst_produtos.IsRefreshing = false;
         }
     }
+
+    private void PickerCategoria_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        var picker = (Picker)sender;
+        var categoriaSelecionada = picker.SelectedItem.ToString();
+
+        if (categoriaSelecionada == "Todos")
+        {
+            lst_produtos.ItemsSource = lista; // lista completa
+        }
+        else
+        {
+            lst_produtos.ItemsSource = lista.Where(p => p.Categoria == categoriaSelecionada).ToList();
+        }
+    }
+    private async void VerRelatorio_Clicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new RelatorioCategoria(lista));
+    }
 }
 
 

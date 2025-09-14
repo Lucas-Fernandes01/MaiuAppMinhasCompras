@@ -7,6 +7,7 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="🧾 Somar" Clicked="ToolbarItem_Clicked_1"/>
         <ToolbarItem Text="➕ Adicionar" Clicked="ToolbarItem_Clicked" />
+        <ToolbarItem Text="Ver Relatório por Categoria" Clicked="VerRelatorio_Clicked"/>
     </ContentPage.ToolbarItems>
 
     <VerticalStackLayout Padding="20" Spacing="20">
@@ -26,6 +27,18 @@
             HorizontalOptions="Center"
             HorizontalTextAlignment="Center"
             TextColor="Gray"/>
+
+        <Picker Title="Filtrar por Categoria" SelectedIndexChanged="PickerCategoria_SelectedIndexChanged">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Todos</x:String>
+                    <x:String>Alimentos</x:String>
+                    <x:String>Higiene</x:String>
+                    <x:String>Limpeza</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
 
         <SearchBar x:Name="txt_search" TextChanged="txt_search_TextChanged"
                    Placeholder="Busca de Produtos"/>
